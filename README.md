@@ -28,15 +28,13 @@ Propriedades principais: `Musica.nomeMusica`, `Artista.nomeArtista`, `OUVIU.repr
 
 ## Dados
 
-Dataset do Kaggle: [NOME DO DATASET](LINK DO DATASET), com dois arquivos CSV.
+Dataset do Kaggle: [Million Song Dataset + Spotify + Last.fm](https://www.kaggle.com/datasets/undefinenull/million-song-dataset-spotify-lastfm/data), com dois arquivos CSV.
 
 Uma amostra dos arquivos está na pasta `data/`.
 
 ## Carga dos dados
 
 A carga foi feita pela ferramenta **Import** do Neo4j Aura, sem script: os dois CSVs foram enviados e mapeados visualmente para os nós e relacionamentos do modelo.
-
-![Mapeamento no Aura Import](images/import.png)
 
 ## Query de recomendação
 
@@ -61,10 +59,6 @@ O ranking prioriza as músicas com mais usuários em comum e, no empate, as com 
 
 ![Resultado da recomendação](images/resultado.png)
 
-## Dificuldades
-
-- **Limite da instância gratuita do Aura:** um dos CSVs tinha registros demais e não cabia na instância Free. Resolvido usando metade das linhas desse arquivo.
-- **`WHERE` depois do `OPTIONAL MATCH`:** nessa posição o `WHERE` só filtra o `OPTIONAL MATCH`, então a música de referência podia aparecer no resultado. Resolvido movendo o `WHERE` para logo depois do `MATCH`.
 
 ## Como executar
 
@@ -72,6 +66,3 @@ O ranking prioriza as músicas com mais usuários em comum e, no empate, as com 
 2. No **Import**, envie os dois CSVs e faça o mapeamento conforme o modelo acima.
 3. No **Query**, rode a query de recomendação.
 
-## Autor
-
-Fernando (Nando) — [GitHub](https://github.com/Nthingtech)
